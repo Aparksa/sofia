@@ -34,7 +34,7 @@
         // --------------------------------------------------------------------
         return (
           <Deck transition={["zoom", "slide"]} theme={theme} transitionDuration={500} showFullscreenControl="true">
-            <Slide transition={["fade"]}  bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFRV5F/first.png?pub_secret=d3d5d08f47"}>
+            <Slide transition={["fade"]}  bgImage={"/first.png}>
               <Heading size={1} caps lineHeight={1} textColor="black" textAlign="right"	>
                       Séminaire
               </Heading>
@@ -58,7 +58,7 @@
                 <Appear><ListItem>Pourquoi moi ?</ListItem></Appear>
               </List>
             </Slide>
-            <Slide d="why-me" transition={["fade"]} bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFQ14Z/between.png?pub_secret=2e9e4b53a2"} bgDarken={0.75}>
+            <Slide d="why-me" transition={["fade"]} bgImage={"/between.png"} bgDarken={0.75}>
               <Appear fid="1">
                 <Heading size={1} caps fit textColor="primary">
                   J'ai levé le doigt
@@ -80,7 +80,7 @@
                 </Heading>
               </Appear>
             </Slide>
-            <Slide id="now" transition={["fade"]} bgColor="black" notes="On fait quoi" bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFQ14Z/between.png?pub_secret=2e9e4b53a2"}>
+            <Slide id="now" transition={["fade"]} bgColor="black" notes="On fait quoi" bgImage={"/between.png}>
               <Text bold textColor="black" textAlign="left">
                 Utilisation actuelle de l'information aéronautique
               </Text>
@@ -89,7 +89,7 @@
                 <Appear><ListItem>besoins variés</ListItem></Appear>
               </List>
             </Slide>
-            <Slide id="how" transition={["fade"]} bgColor="black" notes="On fait comment" bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFQ14Z/between.png?pub_secret=2e9e4b53a2"}>
+            <Slide id="how" transition={["fade"]} bgColor="black" notes="On fait comment" bgImage={/between.png"}>
             <Text bold textColor="black" textAlign="left">
               Comment est traitée l'information aéronautique
             </Text>
@@ -98,7 +98,7 @@
               <Appear><ListItem>exploitation du xml</ListItem></Appear>
             </List>
           </Slide>
-            <Slide transition={["spin", "slide"]} bgColor="tertiary" bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFKE2GA78/last.png?pub_secret=62d8d0864b"}>
+            <Slide transition={["spin", "slide"]} bgColor="tertiary" bgImage={"/last.png"}>
               <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
                 Merci de votre attention !
               </Heading>
