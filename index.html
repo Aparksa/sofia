@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <title>Séminaire AIM</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/normalize.css@7/normalize.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/prop-types@15/prop-types.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://unpkg.com/spectacle@^4/dist/spectacle.js"></script>
+    <script src="https://unpkg.com/spectacle@^4/lib/one-page.js"></script>
+    <script type="text/spectacle">
+      () => {
+        // --------------------------------------------------------------------
+        // Code stuff to use in the presentation.
+        // (We can't link in / require files, but we can approximate here.)
+        // --------------------------------------------------------------------
+        // Customize the default theme.
+        const { themes: { defaultTheme } } = Spectacle;
+        const theme = defaultTheme({
+          primary: "#556ced"
+        });
+
+        
+        // --------------------------------------------------------------------
+        // The presentation!
+        // --------------------------------------------------------------------
+        return (
+          <Deck transition={["zoom", "slide"]} theme={theme} transitionDuration={500} showFullscreenControl="true">
+            <Slide transition={["fade"]}  bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFRV5F/first.png?pub_secret=d3d5d08f47"}>
+              <Heading size={1} caps lineHeight={1} textColor="black" textAlign="right"	>
+                      Séminaire
+              </Heading>
+              <Heading size={1} caps lineHeight={1} textColor="black" textAlign="right">
+               AIM
+            </Heading>
+              <Heading size={1} >
+              </Heading>
+              <Heading size={1} >
+              </Heading>
+              <Text italic textAlign="right" textSize="1.5em" margin="20px 0px 0px" bold>CRNA-SO 23/01/2019</Text>
+            </Slide>
+            <Slide id="context" transition={["fade"]} bgColor="black" notes="Se présenter <br/>Expliquer comment arrive et est traitée la data AIM" bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFQ14Z/between.png?pub_secret=2e9e4b53a2"}>
+              <Text bold textColor="black" textAlign="left">
+                Le contexte
+              </Text>
+              <List>
+                <Appear><ListItem>au CRNA-SO</ListItem></Appear>
+                <Appear><ListItem>pas de SIV ⇒ plancher au <b>FL145</b></ListItem></Appear>
+                <Appear><ListItem>pas de VFR (hormis les secteurs vélivoles)</ListItem></Appear>
+                <Appear><ListItem>Pourquoi moi ?</ListItem></Appear>
+              </List>
+            </Slide>
+            <Slide d="why-me" transition={["fade"]} bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFQ14Z/between.png?pub_secret=2e9e4b53a2"} bgDarken={0.75}>
+              <Appear fid="1">
+                <Heading size={1} caps fit textColor="primary">
+                  J'ai levé le doigt
+                </Heading>
+              </Appear>
+              <Appear fid="2">
+                <Heading size={1} caps fit textColor="tertiary">
+                  Y'avait personne d'autre de disponible
+                </Heading>
+              </Appear>
+              <Appear fid="3">
+                <Heading size={1} caps fit textColor="primary">
+                  alors je suis là !
+                </Heading>
+              </Appear>
+                <Appear fid="4">
+                <Heading size={1}  textColor="primary">
+                  😇
+                </Heading>
+              </Appear>
+            </Slide>
+            <Slide id="now" transition={["fade"]} bgColor="black" notes="On fait quoi" bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFQ14Z/between.png?pub_secret=2e9e4b53a2"}>
+              <Text bold textColor="black" textAlign="left">
+                Utilisation actuelle de l'information aéronautique
+              </Text>
+              <List textAlign="left">
+                <Appear><ListItem>besoins ponctuels sur les positions de contrôle à LFBB, (sollicitations pilotes, questionnement du contrôleur sur une procédure ou une activité), préciser un exemple à l'oral</ListItem></Appear>
+                <Appear><ListItem>besoins variés</ListItem></Appear>
+              </List>
+            </Slide>
+            <Slide id="how" transition={["fade"]} bgColor="black" notes="On fait comment" bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFQ14Z/between.png?pub_secret=2e9e4b53a2"}>
+            <Text bold textColor="black" textAlign="left">
+              Comment est traitée l'information aéronautique
+            </Text>
+            <List>
+              <Appear><ListItem>récupération site SIA ⇒ Traitement de l'information pertinente pour la présenter ensuite</ListItem></Appear>
+              <Appear><ListItem>exploitation du xml</ListItem></Appear>
+            </List>
+          </Slide>
+            <Slide transition={["spin", "slide"]} bgColor="tertiary" bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFKE2GA78/last.png?pub_secret=62d8d0864b"}>
+              <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
+                Merci de votre attention !
+              </Heading>
+            </Slide>
+          </Deck>
+        );
+      }
+    </script>
+</body>
+</html>
