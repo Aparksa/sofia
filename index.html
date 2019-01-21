@@ -7,12 +7,16 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css">
     <link href="https://unpkg.com/normalize.css@7/normalize.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
     <div id="root"></div>
     <script src="https://unpkg.com/prop-types@15/prop-types.js"></script>
     <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
     <script src="https://unpkg.com/spectacle@^4/dist/spectacle.js"></script>
     <script src="https://unpkg.com/spectacle@^4/lib/one-page.js"></script>
@@ -33,8 +37,8 @@
         // The presentation!
         // --------------------------------------------------------------------
         return (
-          <Deck transition={["zoom", "slide"]} theme={theme} transitionDuration={500} showFullscreenControl="true">
-            <Slide transition={["fade"]}  bgImage={"/first.png"}>
+          <Deck transition={["zoom", "slide"]} theme={theme} transitionDuration={500} >
+            <Slide transition={["fade"]}  bgImage={"./first.png"}>
               <Heading size={1} caps lineHeight={1} textColor="black" textAlign="right"	>
                       Séminaire
               </Heading>
@@ -45,60 +49,105 @@
               </Heading>
               <Heading size={1} >
               </Heading>
-              <Text italic textAlign="right" textSize="1.5em" margin="20px 0px 0px" bold>CRNA-SO 23/01/2019</Text>
+              <Text italic textAlign="right" textSize="1.5em" margin="20px 0px 0px" bold>Farman 23/01/2019</Text>
             </Slide>
-            <Slide id="context" transition={["fade"]} bgColor="black" notes="Se présenter <br/>Expliquer comment arrive et est traitée la data AIM" bgImage={"https://files.slack.com/files-pri/T9BE9G9N2-FFHDFQ14Z/between.png?pub_secret=2e9e4b53a2"}>
-              <Text bold textColor="black" textAlign="left">
-                Le contexte
-              </Text>
+            <Slide id="sommaire" transition={["fade"]} bgColor="black" notes="Enoncer le déroulé de la présentation" bgImage={"./between.png"}>
+              <div class="alert alert-primary" role="alert">
+                  <Text bold>Sommaire</Text>
+              </div>
+                <List>
+                  <Appear><ListItem>Contexte AIM au CRNA-SO</ListItem>
+                  </Appear>
+                  <Appear><ListItem>Sources des données AIM</ListItem>
+                  </Appear>
+                  <Appear><ListItem>Exploitation des données AIM</ListItem>
+                  </Appear>
+                  <Appear><ListItem>Besoins futurs</ListItem>
+                  </Appear>
+                </List>
+              </Slide>
+              {MarkdownSlides`
+            ## Le contexte
+              `}
+            <Slide id="context" transition={["fade"]} bgColor="black" notes="Le contexte est différent pour chaque centre" bgImage={"./between.png"}>
+              
+              <div class="alert alert-primary" role="alert">
+                  <Text bold>Contexte AIM au CRNA-SO</Text>
+              </div>
+
               <List>
-                <Appear><ListItem>au CRNA-SO</ListItem></Appear>
+                <Appear><ListItem>Spécifique au CRNA-SO</ListItem></Appear>
                 <Appear><ListItem>pas de SIV ⇒ plancher au <b>FL145</b></ListItem></Appear>
-                <Appear><ListItem>pas de VFR (hormis les secteurs vélivoles)</ListItem></Appear>
-                <Appear><ListItem>Pourquoi moi ?</ListItem></Appear>
+                <Appear><ListItem>pas de VFR ⇒ données AIM correspondantes non nécessaires</ListItem></Appear>
               </List>
             </Slide>
-            <Slide id="why-me" transition={["fade"]} bgImage={"/between.png"} bgDarken={0.75}>
-              <Appear fid="1">
-                <Heading size={1} caps fit textColor="primary">
-                  J'ai levé le doigt
-                </Heading>
-              </Appear>
-              <Appear fid="2">
-                <Heading size={1} caps fit textColor="tertiary">
-                  Y'avait personne d'autre de disponible
-                </Heading>
-              </Appear>
-              <Appear fid="3">
-                <Heading size={1} caps fit textColor="primary">
-                  alors je suis là !
-                </Heading>
-              </Appear>
-                <Appear fid="4">
-                <Heading size={1}  textColor="primary">
-                  😇
-                </Heading>
-              </Appear>
-            </Slide>
-            <Slide id="now" transition={["fade"]} bgColor="black" notes="On fait quoi, préciser à l'oral" bgImage={"/between.png"}>
-              <Text bold textColor="black" textAlign="left">
-                Utilisation actuelle de l'information aéronautique
-              </Text>
+            {MarkdownSlides`
+              ## Sources des données
+                `}
+                <Slide id="sources" transition={["fade"]} bgColor="black" notes="Lister les sources et formes de la data AIM" bgImage={"./between.png"}>
+                  <div class="alert alert-primary" role="alert">
+                      <Text bold>Sources des données AIM</Text>
+                  </div>
+                <List>
+                  <Appear><ListItem>Site du SIA</ListItem></Appear>
+                  <Appear><ListItem>Site de l'AIS espagnol (enaire.es)</ListItem></Appear>
+                  <Appear><ListItem><code>xml</code> du SIA</ListItem></Appear>
+                </List>
+              </Slide>
+            {MarkdownSlides`
+              ## Exploitation des données
+                `}
+            <Slide id="how" transition={["fade"]} bgColor="black" notes="On fait quoi, préciser à l'oral" bgImage={"./between.png"}>
+              <div class="alert alert-primary" role="alert">
+                  <Text bold>Exploitation des données AIM</Text>
+              </div>
               <List textAlign="left">
-                <Appear><ListItem>besoins ponctuels sur les positions de contrôle à LFBB: <br/>→ Sollicitations des pilotes <br/>→ Questionnement du contrôleur sur une procédure ou une activité</ListItem></Appear>
-                <Appear><ListItem>besoins variés</ListItem></Appear>
+                <Appear><ListItem>
+                    <a class="btn btn-link" data-toggle="collapse" href="#datatable" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <Text>Tableaux de données</Text>
+                      </a> 
+                    <div class="collapse" id="datatable">
+                        <div class="card card-body">
+                            <Image src={"./FQUIR.png"} margin="0px auto 40px" height="293px"/>
+                        </div>
+                      </div>
+                </ListItem></Appear>
+                <Appear><ListItem>
+                    <a class="btn btn-link" data-toggle="collapse" href="#map" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <Text>Cartes</Text>
+                      </a> 
+                    <div class="collapse" id="map">
+                        <div class="card card-body">
+                            <Image src={"./ZonesUIR.png"} margin="0px auto 40px" height="293px"/>
+                        </div>
+                      </div>
+                </ListItem></Appear>
+                <Appear><ListItem>
+                    <a class="btn btn-link" data-toggle="collapse" href="#missions" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <Text>Supports de missions particulières</Text>
+                      </a> 
+                    <div class="collapse" id="missions">
+                        <div class="card card-body">
+                            <Image src={"./mission.png"} margin="0px auto 40px" height="293px"/>
+                        </div>
+                      </div>
+                </ListItem></Appear>
               </List>
             </Slide>
-            <Slide id="how" transition={["fade"]} bgColor="black" notes="On fait comment" bgImage={"/between.png"}>
-            <Text bold textColor="black" textAlign="left">
-              Comment est traitée l'information aéronautique
-            </Text>
-            <List>
-              <Appear><ListItem>récupération site SIA ⇒ Traitement de l'information pertinente pour la présenter ensuite</ListItem></Appear>
-              <Appear><ListItem>exploitation du xml</ListItem></Appear>
-            </List>
-          </Slide>
-            <Slide transition={["spin", "slide"]} bgColor="tertiary" bgImage={"/last.png"}>
+            {MarkdownSlides`
+              ## Besoins futurs
+                `}
+             <Slide id="need" transition={["fade"]} bgColor="black" notes="Insister sur la limitation, et la variété des besoins. </br>Rappeler que le centre a su et saura s'adapter aux nouvelles formes de transmission des données AIM" bgImage={"./between.png"}>
+              <div class="alert alert-primary" role="alert">
+                  <Text bold>Besoins futurs</Text>
+              </div>
+                <List textAlign="left">
+                  <Appear><ListItem>limités</ListItem></Appear>
+                  <Appear><ListItem>variés</ListItem></Appear>
+                  <Appear><ListItem>capacité d'adaptation</ListItem></Appear>
+                </List>
+                </Slide>
+            <Slide transition={["spin", "slide"]} bgColor="tertiary" bgImage={"./last.png"}>
               <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
                 Merci de votre attention !
               </Heading>
