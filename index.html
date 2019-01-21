@@ -142,10 +142,43 @@
                   <Text bold>Besoins futurs</Text>
               </div>
                 <List textAlign="left">
-                  <Appear><ListItem>limités</ListItem></Appear>
-                  <Appear><ListItem>variés</ListItem></Appear>
-                  <Appear><ListItem>capacité d'adaptation</ListItem></Appear>
+                  <Appear><ListItem>
+                      <a class="btn btn-link" data-toggle="collapse" href="#limit" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          <Text>limités</Text>
+                        </a> 
+                      <div class="collapse" id="limit">
+                          <div class="card card-body">
+                              <p class="card-text">Pas toutes les données AIM sont exploitées au CRNA-SO</p>
+                          </div>
+                        </div>
+                  </ListItem></Appear>
+                  <Appear><ListItem>
+                      <a class="btn btn-link" data-toggle="collapse" href="#various" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          <Text>Variés ..ou pas</Text>
+                        </a> 
+                      <div class="collapse" id="various">
+                          <div class="card card-body">
+                              <p class="card-text">Les besoins en données <code>temporaires</code> et/ou <code>permanentes</code> varient suivant les subdivions qui les exploitent, ou suivant si elles sont utilisées en salle de contrôle ou non.</p>
+                          </div>
+                        </div>
+                  </ListItem></Appear>
+                  <Appear><ListItem>
+                      <a class="btn btn-link" data-toggle="collapse" href="#random" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          <Text>Variables .. ou non</Text>
+                        </a> 
+                      <div class="collapse" id="random">
+                          <div class="card card-body">
+                              <p class="card-text">Les données exploitées varient avec l'évolution des procédures, ou des accords.</p>
+                          </div>
+                        </div>
+                  </ListItem></Appear>
                 </List>
+                </Slide>
+                <Slide transition={["spin", "slide"]}>
+                    <Heading size={1} lineHeight={1.5} >
+                        En résumé
+                    </Heading>
+                    <Text bold>Besoin d'accèder aux données existantes, permanentes ou temporaires depuis la position de contrôle, ou à proximité.</Text>
                 </Slide>
             <Slide transition={["spin", "slide"]} bgColor="tertiary" bgImage={"./last.png"}>
               <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
